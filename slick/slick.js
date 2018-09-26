@@ -1709,11 +1709,6 @@
         var _ = this;
 
         if( !_.unslicked ) {
-
-            _.$slider.trigger('afterChange', [_, index]);
-
-            _.animating = false;
-
             if (_.slideCount > _.options.slidesToShow) {
                 _.setPosition();
             }
@@ -1733,6 +1728,9 @@
                 }
             }
 
+            _.$slider.trigger('afterChange', [_, index]);
+
+            _.animating = false;
         }
 
     };
